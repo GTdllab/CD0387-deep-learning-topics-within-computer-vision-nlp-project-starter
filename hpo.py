@@ -97,7 +97,7 @@ def train(model, train_loader, validation_loader, epochs, criterion, optimizer):
                         )
                     )
                 # NOTE: Comment lines below to train and test on whole dataset
-                if running_samples > (0.5 * len(image_dataset[phase].dataset)):
+                if running_samples > (0.2 * len(image_dataset[phase].dataset)):
                     break
 
             epoch_loss = running_loss / running_samples
@@ -252,7 +252,7 @@ if __name__=='__main__':
     parser.add_argument(
         "--epochs",
         type=int,
-        default=3
+        default=2
     )
     # batch_size
     parser.add_argument(
