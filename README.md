@@ -17,16 +17,21 @@ Upload the data to an S3 bucket through the AWS Gateway so that SageMaker has ac
 ## Hyperparameter Tuning
 What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
-ResNet50 model to perform image classification because it's a good transfer learning model that suitbale to this problem.    
+We selected the ResNet50 model for image classification due to its proven effectiveness in transfer learning tasks and suitability for this problem.
 
-The learning rate was searched over a continuous range from 0.001 to 0.1,  while the batch size was searched over a categorical set of values including 16, 32, 64, 128 and 256, found optimal value
+The hyperparameter search ranges were:
 
-the hyperparameter tunning job screenshot here:
+Learning rate: 0.001 to 0.1 (continuous)
+Batch size: [16, 32, 64, 128, 256] (categorical)
+
+The hyperparameter tuning job results:
 ![](hyperparameter_tuning_job.png)
 
-best metrics is 
-with learning rate 0.0017379304537316156,
-and batch size 32
+Best performance metrics: 3.3122
+with 
+Learning rate: 0.0017379
+Batch size: 32
+
 
 
 Remember that your README should:
