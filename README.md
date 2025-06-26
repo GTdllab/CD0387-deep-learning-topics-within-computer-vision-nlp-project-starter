@@ -17,7 +17,7 @@ Upload the data to an S3 bucket through the AWS Gateway so that SageMaker has ac
 ## Hyperparameter Tuning
 What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
-We selected the ResNet50 model for image classification due to its proven effectiveness in transfer learning tasks and suitability for this problem.
+ResNet50 model is selected for image classification due to its proven effectiveness in transfer learning tasks and suitability for this problem.
 
 The hyperparameter search ranges were:
 
@@ -28,7 +28,7 @@ The hyperparameter tuning job results:
 ![](hyperparameter_tuning_job.png)
 
 Best performance metrics: 3.3122
-with 
+with best hyperparameters:
 Learning rate: 0.0017379
 Batch size: 32
 
@@ -42,15 +42,19 @@ Remember that your README should:
 
 ## Debugging and Profiling
 **TODO**: Give an overview of how you performed model debugging and profiling in Sagemaker
+
 Create `train_model.py` and use the smdebug library to register a hook in the main function. Add the hook to both train and test functions, along with rules, hook_config and profiler_config for training in `train_and_deploy.ipynb`.
 
 ### Results
 **TODO**: What are the results/insights did you get by profiling/debugging your model?
+
 Debugging revealed validation loss issues:
 - Unusually low initial validation loss 
 - Early plateau indicates potential overfitting or learning rate instability
 
+
 **TODO** Remember to provide the profiler html/pdf file in your submission.
+
 Profiler html can be found here: [profiler html](./ProfilerReport/profiler-output/profiler-report.html)
 
 ## Model Deployment
